@@ -1,5 +1,5 @@
 FROM java:8-jre
-MAINTAINER Sergei Silnov <po@kumekay.com>
+MAINTAINER Ben Selkirk <jamminx@gmail.com>
 
 ENV BLYNK_SERVER_VERSION 0.17.0
 RUN mkdir /blynk
