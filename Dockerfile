@@ -15,6 +15,9 @@ RUN ln -s /data/server.properties /blynk/server.properties
 # Symlink for mailer config
 RUN ln -s /data/mail.properties /blynk/mail.properties
 
+# Symlink for mailer config
+RUN ln -s /data/sms.properties /blynk/sms.properties
+
 # By default, mobile application uses port 8443 and is based on SSL/TLS
 # sockets.
 # Default hardware port is 8442 and is based on plain TCP/IP sockets.
