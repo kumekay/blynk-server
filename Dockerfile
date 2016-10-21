@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM java:8-jre 
 MAINTAINER Ben Selkirk <jamminx@gmail.com>
 
 ENV BLYNK_SERVER_VERSION 0.19.0
