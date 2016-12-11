@@ -1,19 +1,21 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Sergei Silnov <po@kumekay.com>
 
+ENV VERSION 0.20.1
+
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/pinya/blynk-server.git" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0.0-rc1"
+      org.label-schema.schema-version="1.0.0-rc1" \
+      org.label-schema.version=$VERSION
 
-ENV BLYNK_SERVER_VERSION 0.20.1
 
 RUN apk --update add wget
 RUN mkdir /blynk
-RUN wget https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar -O /blynk/server.jar
+RUN wget https://github.com/blynkkk/blynk-server/releases/download/v${VERSION}/server-${VERSION}.jar -O /blynk/server.jar
 
 # Create data folder. To persist data, map a volume to /data
 RUN mkdir /data
