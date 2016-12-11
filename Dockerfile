@@ -1,9 +1,12 @@
-FROM java:8-jre
-MAINTAINER Michael Ferguson <mpherg@gmail.com>
+FROM openjdk:8-jre-alpine
+MAINTAINER Sergei Silnov <po@kumekay.com>
 
-ENV BLYNK_SERVER_VERSION 0.19.2
+
+ENV BLYNK_SERVER_VERSION 0.20.1
+
+RUN apk --update add wget
 RUN mkdir /blynk
-RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
+RUN wget https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar -O /blynk/server.jar
 
 # Create data folder. To persist data, map a volume to /data
 RUN mkdir /data
@@ -21,5 +24,6 @@ RUN mkdir /config && touch /config/server.properties
 # 8080: HTTP port
 # 7443: Administration UI HTTPS port
 EXPOSE 7443 8080 8081 8082 8441 8442 8443 9443
+
 WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/config/server.properties"]

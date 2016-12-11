@@ -1,4 +1,4 @@
-# Docker image that runs the Blynk server v0.19.2
+# Docker image (based on openjdk:8-jre-apline) that runs the Blynk server v0.20.1
 
 ## Build image
 
@@ -36,3 +36,7 @@ Don't forget to encrypt your privkey and set password:
 ```
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in privkey.pem -out privkey_pass.pem
 ```
+
+Good luck!
+
+Original blynk-docker project: https://github.com/mpherg/blynk-server
