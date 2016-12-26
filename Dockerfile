@@ -20,9 +20,6 @@ RUN wget https://github.com/blynkkk/blynk-server/releases/download/v${VERSION}/s
 # Create data folder. To persist data, map a volume to /data
 RUN mkdir /data
 
-# Create configuration folder. To persist data, map a file to /config/server.properties
-RUN mkdir /config && touch /config/server.properties
-
 # IP port listing:
 # 8443: Application mutual ssl/tls port
 # 8442: Hardware plain tcp/ip port
@@ -35,4 +32,4 @@ RUN mkdir /config && touch /config/server.properties
 EXPOSE 7443 8080 8081 8082 8441 8442 8443 9443
 
 WORKDIR /data
-ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/config/server.properties"]
+ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data", "-serverConfig", "/data/server.properties"]
