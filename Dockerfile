@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Sergei Silnov <po@kumekay.com>
 
-ENV VERSION 0.20.1
+ENV VERSION 0.21.1
 
 ARG BUILD_DATE
 ARG VCS_REF
