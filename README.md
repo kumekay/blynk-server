@@ -1,4 +1,4 @@
-# Docker image (based on openjdk:8-jre-apline) that runs the Blynk server v0.20.1
+# Docker image (based on openjdk:8-jre-apline) that runs the Blynk server v0.21.1
 
 [![](https://images.microbadger.com/badges/version/pinya/blynk.svg)](https://microbadger.com/images/pinya/blynk "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/pinya/blynk.svg)](https://microbadger.com/images/pinya/blynk "Get your own image badge on microbadger.com")
