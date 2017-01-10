@@ -1,7 +1,7 @@
-FROM java:8-jre
-MAINTAINER Sergei Silnov <po@kumekay.com>
+FROM java:8-jre 
+MAINTAINER Ben Selkirk <jamminx@gmail.com>
 
-ENV BLYNK_SERVER_VERSION 0.16.2
+ENV BLYNK_SERVER_VERSION 0.21.6
 RUN mkdir /blynk
 RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
@@ -14,6 +14,9 @@ RUN ln -s /data/server.properties /blynk/server.properties
 
 # Symlink for mailer config
 RUN ln -s /data/mail.properties /blynk/mail.properties
+
+# Symlink for mailer config
+RUN ln -s /data/sms.properties /blynk/sms.properties
 
 # By default, mobile application uses port 8443 and is based on SSL/TLS
 # sockets.
