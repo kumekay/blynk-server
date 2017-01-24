@@ -1,4 +1,4 @@
-# Docker image that runs the Blynk server v0.21.6
+# Docker image that runs the Blynk server v0.21.8
 
 ## Build image
 
