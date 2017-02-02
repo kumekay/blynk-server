@@ -24,7 +24,7 @@ RUN ln -s /data/sms.properties /blynk/sms.properties
 # Default secure hardware port is 8441 and is based on plain SSL/TLS sockets.
 # Blynk server also has administration panel where you could monitor your
 # server. It could be accessible with URL https://your_ip:7443/admin
-EXPOSE 7443 8441 8442 8443
+EXPOSE 7443 8441 8442 8443 9443 
 
 WORKDIR /data
 ENTRYPOINT ["java", "-jar", "/blynk/server.jar", "-dataFolder", "/data"]
