@@ -17,7 +17,7 @@ docker run --restart=always \
 
 ## SSL
 
-You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certbot.eff.org/) or from [StartSSL](https://www.startssl.com/).
+You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certbot.eff.org/) or from [StartSSL](https://www.startssl.com/). 
 
 Put your `fullchain.crt` and `privkey.pem` to `blynk-data` folder.
 
