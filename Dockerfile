@@ -13,7 +13,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.version=$VERSION
 
 
-RUN apk --update add wget
+RUN apt-get update
+RUN apt-get install wget -y
 RUN mkdir /blynk
 RUN wget https://github.com/blynkkk/blynk-server/releases/download/v${VERSION}/server-${VERSION}.jar -O /blynk/server.jar
 
