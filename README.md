@@ -9,18 +9,26 @@
 docker build -t blynk .
 ```
 ## Run image
+Create a volume with configuration:
+
+```
+docker volume create blynk-server-data
+```
+
+Check data volume actual location (by default it will be `/var/lib/docker/volumes/blynk-server-data/_data`): 
+Put configuration to `server.properties` in this folder. Possible options are listed here: [https://github.com/blynkkk/blynk-server](https://github.com/blynkkk/blynk-server)
 
 ```
 docker run --restart=always \
 -p 7443:7443 -p 8443:8443 \
 -p 8442:8442 -p 8441:8441 \
--v /path/to/blynk-server-data:/data \
+--mount source=blynk-server-data,target=/data  \
 --name blynk -d pinya/blynk
 ```
 
 ## SSL
 
-You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certbot.eff.org/) or from [StartSSL](https://www.startssl.com/).
+You can obtain free ssl certificates using [Let's Encrypt Certbot](https://certbot.eff.org/) 
 
 Put your `fullchain.crt` and `privkey.pem` to `blynk-data` folder.
 
