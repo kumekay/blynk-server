@@ -1,7 +1,7 @@
 FROM openjdk:9-jre-slim
 MAINTAINER Sergei Silnov <po@kumekay.com>
 
-ENV VERSION 0.28.9
+ENV VERSION 0.30.2
 
 ARG BUILD_DATE
 ARG VCS_REF
